@@ -1,6 +1,10 @@
 <head>
   <title>{{ site.title }}</title>
 
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+  {% include analytics.html %}
+  {% endif %}
+
   <!-- Meta -->
   <meta charset="utf-8">
   {% if site.chrome_mobile_color %}
