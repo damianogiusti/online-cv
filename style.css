@@ -80,7 +80,11 @@ img { max-width: 100%; }
   display: inline-flex; align-items: center; gap: 0.55rem;
   color: var(--bright); font-size: 0.95rem; font-weight: 500;
 }
-.brand .pick { width: 15px; height: 18px; fill: var(--accent); flex: none; }
+.brand .logo-mark {
+  width: 30px; height: 20px; flex: none; background: var(--accent);
+  -webkit-mask: url(/assets/images/logo.png) left center / contain no-repeat;
+  mask: url(/assets/images/logo.png) left center / contain no-repeat;
+}
 .site-nav { display: flex; align-items: center; gap: 1.4rem; font-size: 0.84rem; color: var(--muted); }
 .site-nav a:hover { color: var(--accent); }
 .toggle {
@@ -236,7 +240,7 @@ img { max-width: 100%; }
   display: flex; align-items: center; gap: 1.3rem; margin: 0 0 1.4rem;
 }
 .cv-profile .avatar {
-  width: 5rem; height: 5rem; border-radius: 50%;
+  width: 120px; height: 120px; border-radius: 50%;
   object-fit: cover; border: 1px solid var(--rule); filter: saturate(1.05); flex: none;
 }
 .cv-profile h1 { margin: 0; font-size: 1.5rem; color: var(--bright); font-weight: 600; letter-spacing: -0.01em; }
@@ -251,15 +255,21 @@ img { max-width: 100%; }
 .cv-contact a:hover { color: var(--accent); }
 .cv-contact svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; flex: none; }
 
-.cv-section { margin: 0 0 2.8rem; }
+.cv-section { margin: 0 0 3.6rem; }
 .cv-section > h2 {
-  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--faint); font-weight: 600; margin: 0 0 1.3rem;
-  padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--bright); font-weight: 600; margin: 0 0 1.6rem;
+  padding-bottom: 0.6rem; border-bottom: 2px solid var(--accent);
+}
+.cv-section > h2::before {
+  content: ""; width: 8px; height: 8px; border-radius: 2px;
+  background: var(--accent); flex: none;
 }
 
-.cv-item { margin: 0 0 1.7rem; }
-.cv-item:last-child { margin-bottom: 0; }
+.cv-item { margin: 0; padding: 1.4rem 0; border-top: 1px solid var(--rule); }
+.cv-item:first-of-type { border-top: none; padding-top: 0; }
+.cv-item:last-child { padding-bottom: 0; }
 .cv-item .top { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: baseline; }
 .cv-item h3 { margin: 0; font-size: 1rem; color: var(--bright); font-weight: 600; }
 .cv-item .when { color: var(--faint); font-size: 0.82rem; white-space: nowrap; }
